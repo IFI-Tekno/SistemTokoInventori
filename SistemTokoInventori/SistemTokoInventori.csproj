@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A5B2C3D4-E5F6-4A7B-8C9D-0E1F2A3B4C5D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SistemTokoInventori</RootNamespace>
+    <AssemblyName>SistemTokoInventori</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Data.SQLite">
+      <HintPath>libs\System.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>libs\Guna.UI2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libs\x64\SQLite.Interop.dll">
+      <Link>x64\SQLite.Interop.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="libs\x86\SQLite.Interop.dll">
+      <Link>x86\SQLite.Interop.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConnectionManager.cs" />
+    <Compile Include="Theme.cs" />
+    <Compile Include="Barcode39.cs" />
+    <Compile Include="KasirControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KasirControl.Designer.cs">
+      <DependentUpon>KasirControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaporanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="LaporanControl.Designer.cs">
+      <DependentUpon>LaporanControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PembelianControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PenjualanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StokHelper.cs" />
+    <Compile Include="JurnalHelper.cs" />
+    <Compile Include="KeuanganControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="KonsinyasiControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PersediaanControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FormKonsinyasiJual.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLokasi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTukarTambah.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCatatPembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetailPembayaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHistoryHarga.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBayar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBayar.Designer.cs">
+      <DependentUpon>FormBayar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStruk.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStruk.Designer.cs">
+      <DependentUpon>FormStruk.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Database jadi (39 tabel + seed) dibundel di proyek dan disalin
+         ke bin\Debug di samping .exe. PreserveNewest (BUKAN Always):
+         kalau .db di output sudah diubah aplikasi (ada data baru),
+         Build berikutnya TIDAK menimpanya dengan file proyek. -->
+    <Content Include="TokoBangunan.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

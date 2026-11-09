@@ -1,0 +1,20 @@
+# Visual Studio / .NET
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.db
+*.mdf
+*.ldf
+
+# NuGet (tidak dipakai — dll dibundel di libs/)
+packages/
+packages.config
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Sementara
+*.log
