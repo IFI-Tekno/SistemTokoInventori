@@ -4,9 +4,14 @@ obj/
 .vs/
 *.user
 *.suo
-*.db
 *.mdf
 *.ldf
+
+# Database: JANGAN ignore *.db secara global — 3 file .db template di
+# SistemTokoInventori/Data/... adalah bagian proyek (Content) dan HARUS
+# ikut commit ke GitHub. Yang tetap di-ignore hanya file database lama
+# berisi data user (tidak boleh masuk repo):
+TokoBangunan.db
 
 # NuGet (tidak dipakai — dll dibundel di libs/)
 packages/
